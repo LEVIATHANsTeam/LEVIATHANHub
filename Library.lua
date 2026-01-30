@@ -72,10 +72,10 @@ local Library = {
 
     IsLightTheme = false,
     Scheme = {
-        BackgroundColor = Color3.fromRGB(15, 15, 15),
-        MainColor = Color3.fromRGB(25, 25, 25),
-        AccentColor = Color3.fromRGB(125, 85, 255),
-        OutlineColor = Color3.fromRGB(40, 40, 40),
+        BackgroundColor = Color3.fromRGB(10, 20, 10),
+        MainColor = Color3.fromRGB(15, 30, 15),
+        AccentColor = Color3.fromRGB(0, 200, 0),
+        OutlineColor = Color3.fromRGB(0, 100, 0),
         FontColor = Color3.new(1, 1, 1),
         Font = Font.fromEnum(Enum.Font.Code),
 
@@ -4008,6 +4008,20 @@ function Library:CreateWindow(WindowInfo)
             CornerRadius = UDim.new(0, WindowInfo.CornerRadius - 1),
             Parent = MainFrame,
         })
+        
+        -- Hydra Logo Background on MainFrame
+        New("ImageLabel", {
+            AnchorPoint = Vector2.new(0.5, 0.5),
+            BackgroundTransparency = 1,
+            Image = "rbxassetid://82052229783095",
+            ImageTransparency = 0.92,
+            Position = UDim2.fromScale(0.15, 0.5),
+            Size = UDim2.fromScale(0.25, 0.25),
+            ScaleType = Enum.ScaleType.Fit,
+            ZIndex = 1,
+            Parent = MainFrame,
+        })
+        
         do
             local Lines = {
                 {
@@ -4221,6 +4235,19 @@ function Library:CreateWindow(WindowInfo)
             Position = UDim2.new(1, 0, 0, 49),
             Size = UDim2.new(0.7, -1, 1, -70),
             Parent = MainFrame,
+        })
+        
+        -- Hydra Logo Background on Container
+        New("ImageLabel", {
+            AnchorPoint = Vector2.new(0.5, 0.5),
+            BackgroundTransparency = 1,
+            Image = "rbxassetid://82052229783095",
+            ImageTransparency = 0.92,
+            Position = UDim2.fromScale(0.5, 0.5),
+            Size = UDim2.fromScale(0.6, 0.6),
+            ScaleType = Enum.ScaleType.Fit,
+            ZIndex = 1,
+            Parent = Container,
         })
 
         New("UIPadding", {
